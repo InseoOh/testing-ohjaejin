@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소곤소곤 - 평범한 한국인과의 진짜 대화 & 친밀한 유대감</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Noto Sans KR & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff5f5',
+                            100: '#ffe3e3',
+                            200: '#ffc9c9',
+                            400: '#ff8787',
+                            500: '#ff6b6b', // Primary warm coral
+                            600: '#fa5252',
+                            700: '#e03131',
+                        },
+                        secondary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        },
+                        warmBg: '#fdfbf7'
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fdfbf7;
+            color: #2d3748;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+        }
+        .tab-active {
+            background-color: #ff6b6b;
+            color: white;
+            box-shadow: 0 4px 14px rgba(255, 107, 107, 0.35);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 glass-card transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="w-11 h-11 rounded-2xl gradient-bg flex items-center justify-center text-white shadow-lg shadow-brand-500/30">
+                    <i class="fa-solid fa-comments text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-tight text-gray-900">소곤소곤</span>
+                    <span class="text-xs text-brand-500 font-outfit font-semibold block tracking-wider uppercase">Sogon Sogon</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+                <a href="#why" class="hover:text-brand-500 transition-colors">서비스 소개
+                
+                </a>
+                <a href="#workflow" class="hover:text-brand-500 transition-colors">이용 방법</a>
+                <a href="#demo" class="hover:text-brand-500 transition-colors">미리보기</a>
+                <a href="#calculator" class="hover:text-brand-500 transition-colors">수익 계산기</a>
+                <a href="#survey" class="hover:text-brand-500 transition-colors">의견 전달하기</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="#survey" class="px-5 py-2.5 rounded-full text-sm font-bold text-white gradient-bg shadow-lg shadow-brand-500/25 hover:opacity-95 transition-all transform hover:-translate-y-0.5">
+                    사전 등록하기
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Content -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand-100 text-brand-600 text-sm font-medium mb-6 animate-pulse">
+                        <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                        글로벌 버디 & 언어 교환 커뮤니티 오픈 준비 중
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-tight mb-6">
+                        딱딱한 교재는 그만!<br/>
+                        <span class="gradient-text">평범한 한국인 친구</span>와<br/>
+                        진짜 일상을 대화하세요.
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        자격증 있는 선생님과의 정형화된 수업 대신,<br class="hidden sm:inline"/>
+                        진짜 내 나이대 한국인 친구와 소소한 화상 수다를 떨고<br class="hidden sm:inline"/>
+                        한국에 놀러왔을 때 만날 수 있는 특별한 연결.
+                    </p>
+
+                    <!-- Dual CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+                        <a href="#survey" onclick="setRole('foreigner')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gray-900 hover:bg-gray-800 text-white font-bold text-base shadow-xl flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1">
+                            <i class="fa-solid fa-earth-americas text-brand-400"></i>
+                            <span>외국인 회원으로 관심 등록</span>
+                        </a>
+                        <a href="#survey" onclick="setRole('korean')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white hover:bg-gray-50 text-gray-900 font-bold text-base border-2 border-gray-200 shadow-md flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1">
+                            <i class="fa-solid fa-hand-holding-heart text-brand-500"></i>
+                            <span>한국인 대화 대화상대(대화 파트너) 등록</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Highlights -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200/80 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl font-black text-gray-900 font-outfit">100%</p>
+                            <p class="text-xs text-gray-500 font-medium">일상 속 실전 대화</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-brand-500 font-outfit">30분 / 1시간</p>
+                            <p class="text-xs text-gray-500 font-medium">자유로운 시간 선택</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-gray-900 font-outfit">오프라인</p>
+                            <p class="text-xs text-gray-500 font-medium">한국 여행 시 오프라인 모임</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Floating Mockup -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md">
+                        <!-- Background Glow -->
+                        <div class="absolute -top-6 -bottom-6 -left-6 -right-6 bg-gradient-to-tr from-brand-400 to-amber-300 rounded-3xl opacity-30 blur-2xl"></div>
+
+                        <!-- Card 1: Video Call Preview -->
+                        <div class="relative bg-white rounded-3xl p-5 shadow-2xl border border-gray-100 mb-4">
+                            <div class="relative h-64 rounded-2xl overflow-hidden bg-gray-900 flex flex-col justify-between p-4" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                                <div class="flex justify-between items-center text-white">
+                                    <span class="bg-black/40 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5">
+                                        <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
+                                        라이브 화상 수다 중
+                                    </span>
+                                    <span class="bg-brand-500 font-outfit font-bold text-xs px-2.5 py-1 rounded-full">24:18</span>
+                                </div>
+
+                                <!-- Icebreaker Bubble Overlay -->
+                                <div class="bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-lg border border-white/50 text-xs">
+                                    <p class="text-brand-600 font-bold mb-1 flex items-center gap-1">
+                                        <i class="fa-solid fa-lightbulb"></i> 오늘의 대화 추천 카드
+                                    </p>
+                                    <p class="text-gray-800 font-medium">"요즘 한국 편의점에서 제일 인기 있는 디저트는 뭐야?"</p>
+                                </div>
+                            </div>
+
+                            <!-- User Profiles Bar -->
+                            <div class="flex items-center justify-between mt-4 px-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="relative">
+                                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" class="w-10 h-10 rounded-full object-cover ring-2 ring-brand-500" alt="Sarah">
+                                        <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full ring-2 ring-white"></span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-gray-800">Sarah (미국, 24세)</p>
+                                        <p class="text-xs text-gray-500">한국어 초중급 • K-Pop 관심</p>
+                                    </div>
+                                </div>
+                                <span class="text-gray-300"><i class="fa-solid fa-arrows-rotate-reverse text-lg"></i></span>
+                                <div class="flex items-center gap-3 text-right">
+                                    <div>
+                                        <p class="text-sm font-bold text-gray-800">지민 (한국, 25세)</p>
+                                        <p class="text-xs text-gray-500">서울 거주 • 대학생</p>
+                                    </div>
+                                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" class="w-10 h-10 rounded-full object-cover ring-2 ring-secondary-500" alt="Jimin">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Offline Meetup Badge Preview -->
+                        <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-4 border border-amber-200 shadow-lg flex items-center gap-4 transform rotate-1">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center text-xl font-bold shrink-0">
+                                <i class="fa-solid fa-plane-arrival"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-amber-800 uppercase tracking-wider">한국 방문 시 오프라인 만남</h4>
+                                <p class="text-xs text-gray-700 mt-0.5">"다음 달 홍대에서 만나 성수동 맛집 투어 가기로 했어요!"</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Ticker Bar -->
+    <section class="bg-white border-y border-gray-200/80 py-5">
+        <div class="max-w-7xl mx-auto px-4 text-center flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+            <div class="flex items-center gap-2">
+                <span class="flex h-3 w-3 relative">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-500"></span>
+                </span>
+                <span class="text-sm font-bold text-gray-800">현재까지 관심 등록 인원:</span>
+            </div>
+            <div class="flex items-center gap-1 font-outfit text-2xl font-black text-brand-600">
+                <span id="counter">1,482</span>명
+            </div>
+            <span class="hidden sm:inline text-gray-300">|</span>
+            <p class="text-xs sm:text-sm text-gray-600">
+                외국인 회원 <strong>62%</strong> &nbsp;•&nbsp; 한국인 대화 파트너 <strong>38%</strong> 참여 희망 중!
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 2: Why Sogon Sogon (Problem & Solution) -->
+    <section id="why" class="py-20 lg:py-28 bg-warmBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-extrabold text-brand-500 tracking-wider uppercase mb-2">Why Sogon Sogon</h2>
+                <h3 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">기존 학원 수업과는 무엇이 다른가요?</h3>
+                <p class="mt-4 text-gray-600 text-base sm:text-lg">교재 속 문법 위주의 딱딱한 공부 대신, 진짜 내 또래 친구의 자연스러운 한국어를 배웁니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Existing Platforms / Academies -->
+                <div class="bg-gray-100 rounded-3xl p-8 border border-gray-200 opacity-90 relative">
+                    <span class="bg-gray-300 text-gray-700 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">기존 학원 / 화상 교육</span>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">선생님과 학생의 비대칭적 관계</h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-red-400 text-base mt-0.5"></i>
+                            <span><strong>정형화된 커리큘럼:</strong> 실제 한국인들이 실생활에서 잘 쓰지 않는 어색한 교재용 표현 중심.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-red-400 text-base mt-0.5"></i>
+                            <span><strong>비싼 수강료:</strong> 자격증 소지 전문 교사 기반으로 부담스러운 시간당 비용.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-red-400 text-base mt-0.5"></i>
+                            <span><strong>일회성 관계:</strong> 수업이 끝나면 남남. 한국에 와도 실제 만날 수 있는 인맥 형성 불가.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sogon Sogon Difference -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-brand-500 shadow-xl relative transform md:-translate-y-2">
+                    <div class="absolute -top-3 right-6 bg-brand-500 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+                        소곤소곤 만의 매력
+                    </div>
+                    <span class="bg-brand-100 text-brand-700 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">친구 대 친구 (Peer-to-Peer)</span>
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">평범한 한국인과의 진짜 연결</h4>
+                    <ul class="space-y-4 text-sm text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-500 text-base mt-0.5"></i>
+                            <span><strong>생생한 일상 대화:</strong> 최신 트렌드, 신조어, 맛집, MBTI 등 가볍고 재밌는 주제로 연결.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-500 text-base mt-0.5"></i>
+                            <span><strong>합리적 비용 & 소소한 수익:</strong> 외국인은 가볍게 즐기고, 한국인은 소소한 용돈벌이.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-500 text-base mt-0.5"></i>
+                            <span><strong>여행 버디로 발전:</strong> 친해지면 한국 입국 시 진짜 현지인 친구가 가이드가 되어주는 만남!</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Workflow (How it Works) -->
+    <section id="workflow" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-extrabold text-brand-500 tracking-wider uppercase mb-2">How It Works</h2>
+                <h3 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">소곤소곤 이용 프로세스</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-warmBg rounded-3xl p-8 border border-gray-100 text-center relative group hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-500 text-white font-outfit text-2xl font-black flex items-center justify-center mx-auto mb-6 shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform">
+                        01
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">취향 및 관심사 매칭</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        K-Pop, 한국 드라마, 캠퍼스 라이프, 직장생활 등 관심 키워드와 대화 스타일을 바탕으로 어울리는 대화 상대 탐색.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-warmBg rounded-3xl p-8 border border-gray-100 text-center relative group hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-500 text-white font-outfit text-2xl font-black flex items-center justify-center mx-auto mb-6 shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform">
+                        02
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">1:1 편안한 화상 수다</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        30분 또는 1시간 단위 선택! 어색하지 않게 제공되는 아이스브레이킹 대화 카드로 편안하게 소통.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-warmBg rounded-3xl p-8 border border-gray-100 text-center relative group hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-500 text-white font-outfit text-2xl font-black flex items-center justify-center mx-auto mb-6 shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform">
+                        03
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">오프라인 여행 만남으로</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        온라인에서 쌓은 우정! 외국인 친구가 한국에 방문할 때 약속을 잡고 핫플 탐방 및 진짜 경험 공유.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Interactive Feature Demo & Conversation Cards -->
+    <section id="demo" class="py-20 bg-warmBg border-t border-gray-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-extrabold text-brand-500 tracking-wider uppercase mb-2">Interactive Feature</h2>
+                <h3 class="text-3xl font-black text-gray-900 tracking-tight">대화가 어색할까 봐 걱정되시나요?</h3>
+                <p class="mt-3 text-gray-600">소곤소곤이 제공하는 '대화 촉진 주제 카드'를 클릭해보세요!</p>
+            </div>
+
+            <!-- Topic Card Selector Simulator -->
+            <div class="max-w-3xl mx-auto bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100">
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button onclick="pickTopic('food')" class="topic-btn active px-4 py-2 rounded-full text-xs sm:text-sm font-bold border transition-all bg-brand-500 text-white border-brand-500">
+                        🍕 맛집 & 먹방
+                    </button>
+                    <button onclick="pickTopic('kpop')" class="topic-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold border border-gray-200 text-gray-600 hover:bg-gray-50 transition-all">
+                        🎵 K-POP & 드라마다
+                    </button>
+                    <button onclick="pickTopic('travel')" class="topic-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold border border-gray-200 text-gray-600 hover:bg-gray-50 transition-all">
+                        ✈️ 한국 여행 스팟
+                    </button>
+                    <button onclick="pickTopic('daily')" class="topic-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold border border-gray-200 text-gray-600 hover:bg-gray-50 transition-all">
+                        🏫 일상 & TMI
+                    </button>
+                </div>
+
+                <div id="topicCardDisplay" class="bg-gradient-to-r from-brand-50 to-orange-50 rounded-2xl p-6 text-center border border-brand-100 min-h-[160px] flex flex-col items-center justify-center transition-all">
+                    <p id="topicQuestion" class="text-lg font-bold text-gray-800 mb-3">
+                        "요즘 제일 좋아하는 한국 편의점 조합이나 간식은 뭐야?"
+                    </p>
+                    <span id="topicTag" class="inline-block bg-white text-brand-600 font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                        #음식 #입문대화 #추천표현제공
+                    </span>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <button onclick="randomizeTopic()" class="text-xs text-gray-500 hover:text-brand-500 font-semibold inline-flex items-center gap-1.5 transition-colors">
+                        <i class="fa-solid fa-shuffle"></i> 다른 추천 대화 질문 당겨오기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Earnings Calculator (For Korean Partners) -->
+    <section id="calculator" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-900 rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+                <!-- Decorative Circle -->
+                <div class="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-brand-500/20 blur-3xl"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                    <div class="lg:col-span-6">
+                        <span class="bg-brand-500 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">한국인 파트너 안내</span>
+                        <h3 class="text-3xl sm:text-4xl font-black leading-tight mb-4">
+                            내가 편한 시간에 수다 떨고<br/>
+                            <span class="text-brand-400">소소한 대화 수익</span>을 얻으세요!
+                        </h3>
+                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                            따로 자격증을 공부하거나 거창하게 가르칠 필요가 없습니다. 한국어를 배우고 싶어 하는 글로벌 친구와 즐겁게 이야기 나누는 것만으로 충분합니다.
+                        </p>
+                    </div>
+
+                    <!-- Calculator Card -->
+                    <div class="lg:col-span-6 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/15">
+                        <h4 class="text-base font-bold text-white mb-6 flex items-center justify-between">
+                            <span>예상 부수익 계산기</span>
+                            <span class="text-xs text-brand-300 font-normal">* 예상 기준 금액</span>
+                        </h4>
+
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-2 text-gray-200">
+                                    <span>주당 대화 시간</span>
+                                    <span class="text-brand-400 font-bold" id="hoursVal">주 5시간</span>
+                                </div>
+                                <input type="range" id="hoursSlider" min="1" max="20" value="5" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-brand-500" oninput="updateEarnings()">
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-2 text-gray-200">
+                                    <span>희망 시간당 수당</span>
+                                    <span class="text-brand-400 font-bold" id="rateVal">시간당 15,000원</span>
+                                </div>
+                                <input type="range" id="rateSlider" min="10000" max="30000" step="1000" value="15000" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-brand-500" oninput="updateEarnings()">
+                            </div>
+
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-300">월 예상 수익:</span>
+                                <span class="text-3xl font-black font-outfit text-brand-400" id="totalEarn">300,000 원</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Interactive Opinion & Survey Form (핵심 기능) -->
+    <section id="survey" class="py-20 lg:py-28 bg-warmBg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-12">
+                <span class="bg-brand-100 text-brand-700 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">사전 참가자 피드백</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-gray-900">여러분의 솔직한 의견을 남겨주세요!</h2>
+                <p class="mt-3 text-gray-600 text-sm sm:text-base">
+                    소곤소곤은 정식 출시 전 사용자의 목소리를 반영하여 가장 편안한 대화 공간을 만들고자 합니다.
+                </p>
+            </div>
+
+            <!-- Survey Form Container -->
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-200">
+                <form id="feedbackForm" onsubmit="handleFormSubmit(event)">
+                    
+                    <!-- Role Tab Buttons -->
+                    <div class="mb-8">
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-3">1. 어떤 참여자로 응답하고 싶으신가요?</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <button type="button" id="tabForeigner" onclick="selectRole('foreigner')" class="py-3.5 px-4 rounded-xl text-sm font-bold border border-gray-200 flex items-center justify-center gap-2 transition-all tab-active">
+                                <i class="fa-solid fa-earth-asia"></i> 외국인 학습자
+                            </button>
+                            <button type="button" id="tabKorean" onclick="selectRole('korean')" class="py-3.5 px-4 rounded-xl text-sm font-bold border border-gray-200 text-gray-600 hover:bg-gray-50 flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-solid fa-user-group"></i> 한국인 대화 파트너
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Role-Based Question 1 -->
+                    <div class="mb-6">
+                        <label id="q1Label" class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                            2. 30분~1시간 대화 시 적절하다고 생각하는 금액은 얼마인가요?
+                        </label>
+                        <select id="priceExpectation" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm text-gray-800 font-medium">
+                            <option value="option1">30분당 5,000원 ~ 8,000원 (부담 없는 라이트 대화)</option>
+                            <option value="option2" selected>30분당 8,000원 ~ 12,000원 (적정 수수료 & 수당)</option>
+                            <option value="option3">30분당 12,000원 이상 (프리미엄 밀착 대화)</option>
+                        </select>
+                    </div>
+
+                    <!-- Topic Preference -->
+                    <div class="mb-6">
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                            3. 가장 나누고 싶은 대화 주제는 무엇인가요? (중복 선택 가능)
+                        </label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:bg-gray-50 cursor-pointer text-xs font-medium">
+                                <input type="checkbox" class="rounded text-brand-500 focus:ring-brand-500" checked>
+                                K-드라마/아이돌
+                            </label>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:bg-gray-50 cursor-pointer text-xs font-medium">
+                                <input type="checkbox" class="rounded text-brand-500 focus:ring-brand-500" checked>
+                                한국 여행 & 맛집
+                            </label>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:bg-gray-50 cursor-pointer text-xs font-medium">
+                                <input type="checkbox" class="rounded text-brand-500 focus:ring-brand-500">
+                                일상 라이프/취미
+                            </label>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:bg-gray-50 cursor-pointer text-xs font-medium">
+                                <input type="checkbox" class="rounded text-brand-500 focus:ring-brand-500">
+                                비즈니스/취업
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Opinion Text Area -->
+                    <div class="mb-6">
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                            4. 소곤소곤 서비스에 바라는 점이나 제안하고 싶은 기능
+                        </label>
+                        <textarea rows="3" placeholder="예: 어색하지 않게 게임이나 퀴즈 기능이 있으면 좋겠어요 / 한국 여행 올 때 동행 서비스 연계가 원활했으면 합니다." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm text-gray-800"></textarea>
+                    </div>
+
+                    <!-- Email & Contact -->
+                    <div class="mb-8">
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                            5. 오픈 알림 및 베타 테스터 참여용 이메일
+                        </label>
+                        <input type="email" required placeholder="example@email.com" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm text-gray-800">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full py-4 rounded-2xl gradient-bg text-white font-bold text-base shadow-lg shadow-brand-500/30 hover:opacity-95 transition-all">
+                        소곤소곤 관심 등록 및 의견 제출하기
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Notification -->
+    <div id="thankYouModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl border border-gray-100 transform transition-all">
+            <div class="w-16 h-16 bg-green-100 text-green-500 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <h3 class="text-2xl font-black text-gray-900 mb-2">의견 제출 완료!</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                소중한 의견을 보내주셔서 감사합니다.<br/>
+                소곤소곤 서비스 베타 오픈 시 등록하신 이메일로 가장 먼저 초대장을 보내드릴게요!
+            </p>
+            <button onclick="closeModal()" class="w-full py-3 bg-gray-900 text-white rounded-xl font-bold text-sm hover:bg-gray-800 transition-colors">
+                확인
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center text-white font-bold">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+                <span class="text-xl font-black text-white tracking-tight">소곤소곤</span>
+                <span class="text-xs text-gray-500">© 2026 Sogon Sogon. All rights reserved.</span>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="#" class="hover:text-white transition-colors">이용약관</a>
+                <a href="#" class="hover:text-white transition-colors">개인정보처리방침</a>
+                <a href="#" class="hover:text-white transition-colors">문의하기</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Topic Randomizer Data
+        const topics = {
+            food: [
+                { q: "요즘 제일 좋아하는 한국 편의점 조합이나 간식은 뭐야?", tag: "#음식 #입문대화 #추천표현제공" },
+                { q: "한국 야식 대표 메뉴! 치맥 vs 떡볶이 중 어느 걸 더 좋아해?", tag: "#야식문화 #한국음식" }
+            ],
+            kpop: [
+                { q: "가장 처음 입덕하게 된 K-POP 그룹이나 노래는 뭐야?", tag: "#KPOP #드라마 #덕질수다" },
+                { q: "요즘 재미있게 보고 있는 한국 예능이나 드라마 있어?", tag: "#K-콘텐츠 #취향공유" }
+            ],
+            travel: [
+                { q: "한국에 오면 서울 외에 꼭 가보고 싶은 지역이 있어?", tag: "#여행 #핫플레이스 #동행" },
+                { q: "서울에서 가장 좋아하는 장소나 분위기는 어디야?", tag: "#서울여행 #현지추천" }
+            ],
+            daily: [
+                { q: "너의 MBTI는 뭐야? 한국 사람들은 MBTI 얘기 진짜 자주 해!", tag: "#MBTI #일상 #TMI" },
+                { q: "주말에는 보통 뭐 하면서 쉬어?", tag: "#주말일상 #취미" }
+            ]
+        };
+
+        let currentCategory = 'food';
+
+        function pickTopic(category) {
+            currentCategory = category;
+            
+            // UI Button Highlight
+            document.querySelectorAll('.topic-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-500', 'text-white', 'border-brand-500');
+                btn.classList.add('border-gray-200', 'text-gray-600');
+            });
+            event.currentTarget.classList.add('bg-brand-500', 'text-white', 'border-brand-500');
+            event.currentTarget.classList.remove('border-gray-200', 'text-gray-600');
+
+            randomizeTopic();
+        }
+
+        function randomizeTopic() {
+            const list = topics[currentCategory];
+            const item = list[Math.floor(Math.random() * list.length)];
+            
+            const display = document.getElementById('topicCardDisplay');
+            display.style.opacity = '0';
+            
+            setTimeout(() => {
+                document.getElementById('topicQuestion').innerText = `"${item.q}"`;
+                document.getElementById('topicTag').innerText = item.tag;
+                display.style.opacity = '1';
+            }, 150);
+        }
+
+        // Earnings Calculator logic
+        function updateEarnings() {
+            const hours = parseInt(document.getElementById('hoursSlider').value);
+            const rate = parseInt(document.getElementById('rateSlider').value);
+            
+            document.getElementById('hoursVal').innerText = `주 ${hours}시간`;
+            document.getElementById('rateVal').innerText = `시간당 ${rate.toLocaleString()}원`;
+            
+            // Monthly earnings formula: hours * rate * 4 weeks
+            const total = hours * rate * 4;
+            document.getElementById('totalEarn').innerText = `${total.toLocaleString()} 원`;
+        }
+
+        // Role Tab Handler in Survey
+        let currentRole = 'foreigner';
+
+        function selectRole(role) {
+            currentRole = role;
+            const tabF = document.getElementById('tabForeigner');
+            const tabK = document.getElementById('tabKorean');
+            const q1 = document.getElementById('q1Label');
+
+            if (role === 'foreigner') {
+                tabF.classList.add('tab-active');
+                tabF.classList.remove('text-gray-600');
+                tabK.classList.remove('tab-active');
+                tabK.classList.add('text-gray-600');
+                q1.innerText = '2. 외국인 관점: 30분 대화에 적절한 이용 금액은 얼마라고 생각하시나요?';
+            } else {
+                tabK.classList.add('tab-active');
+                tabK.classList.remove('text-gray-600');
+                tabF.classList.remove('tab-active');
+                tabF.classList.add('text-gray-600');
+                q1.innerText = '2. 한국인 관점: 30분 대화 후 받고 싶은 적정 수당은 얼마인가요?';
+            }
+        }
+
+        function setRole(role) {
+            selectRole(role);
+        }
+
+        // Form Submit Simulation
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            // Show modal
+            document.getElementById('thankYouModal').classList.remove('hidden');
+            
+            // Increment counter visually
+            const counter = document.getElementById('counter');
+            let currentVal = parseInt(counter.innerText.replace(',', ''));
+            counter.innerText = (currentVal + 1).toLocaleString();
+        }
+
+        function closeModal() {
+            document.getElementById('thankYouModal').classList.add('hidden');
+            document.getElementById('feedbackForm').reset();
+        }
+    </script>
+</body>
+</html>
